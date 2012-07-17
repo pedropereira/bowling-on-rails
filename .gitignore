@@ -1,3 +1,10 @@
+# RVM
+
+.rvmrc
+
+
+# Rails
+
 *.rbc
 *.sassc
 .sass-cache
