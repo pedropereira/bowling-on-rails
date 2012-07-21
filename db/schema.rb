@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120720235741) do
+ActiveRecord::Schema.define(:version => 20120721111557) do
 
   create_table "frames", :force => true do |t|
     t.integer  "first_roll"
@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(:version => 20120720235741) do
 
   create_table "games", :force => true do |t|
     t.integer  "current_frame"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.boolean  "finished",      :default => false
   end
 
 end
