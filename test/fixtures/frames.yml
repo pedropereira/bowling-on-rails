@@ -6,7 +6,7 @@ one:
   third_roll: 1
   pins_left: 1
   score: 1
-  type: 
+  mark: 
 
 two:
   first_roll: 1
@@ -14,4 +14,4 @@ two:
   third_roll: 1
   pins_left: 1
   score: 1
-  type: 
+  mark: 
