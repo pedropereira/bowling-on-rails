@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(:version => 20120721111557) do
   add_index "frames", ["game_id"], :name => "index_frames_on_game_id"
 
   create_table "games", :force => true do |t|
-    t.integer  "current_frame"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
-    t.boolean  "finished",      :default => false
+    t.integer  "current_frame_number", :default => 1
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
+    t.boolean  "finished",             :default => false
   end
 
 end
