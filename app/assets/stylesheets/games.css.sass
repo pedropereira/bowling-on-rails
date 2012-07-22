@@ -56,14 +56,32 @@ nav
     border-top-right-radius: 5px
     border-bottom-right-radius: 5px
 
-  .open-state
+  .ongoing-state
     color: #90AB76
 
-  .closed-state
+  .finished-state
     color: #C10000
 
 
 .score-sheet
-  td, th
+  margin: 5% auto 0
+  text-align: center
+
+  th, .second-roll, .third-roll, .total-score
     border: 1px solid #000
+
+  .first-roll
+    border-left: 1px solid #000
+
+  .frame-score
+    border-left: 1px solid #000
+    border-right: 1px solid #000
+    border-bottom: 1px solid #000
+
+  td, th
     padding: 10px
+
+
+form
+  margin: 2% auto 0 !important
+  width: 43%
