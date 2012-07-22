@@ -14,9 +14,11 @@
       <tr>
         <td><%= link_to "Game #{game.id}", game %></td>
         <td><%= time_ago_in_words(game.created_at) %></td>
-        <td><%= game.total_score? %></td>
-        <td class="<%= game.finished ? 'closed' : 'open' %>-state"><%= game.finished ? 'Closed' : 'Open' %></td>
+        <td><%= game.total_score %></td>
+        <td class="<%= game.finished ? 'finished' : 'ongoing' %>-state"><%= game.finished ? 'Finished' : 'Ongoing' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to 'Back', root_url %>
