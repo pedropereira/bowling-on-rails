@@ -18,6 +18,9 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
+    @game.roll!(params[:number_of_pins].to_i)
+
+    redirect_to game_path(@game)
   end
 
   def delete
