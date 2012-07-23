@@ -69,7 +69,8 @@ nav
     text-shadow: 1px 1px #333
 
   td
-    padding: 15px
+    padding: 10px
+    text-align: center
 
   td:first-child
     border-top-left-radius: 5px
@@ -79,17 +80,31 @@ nav
     border-top-right-radius: 5px
     border-bottom-right-radius: 5px
 
-  .ongoing-state
+  .ongoing
     color: #90AB76
     font-family: Orbitron, sans-serif
     font-weight: 400
     text-shadow: 1px 1px #666
 
-  .finished-state
+  .finished
     color: #C10000
     font-family: Orbitron, sans-serif
     font-weight: 400
-    text-shadow: 1px 1px #666
+    text-shadow: 1px 1px #999
+
+  .delete
+    background-image: url('/assets/delete.png')
+    background-repeat: no-repeat
+    background-position: 50%
+    display: block
+    height: 16px
+    margin-left: 100px
+    padding: 10px 0 0
+    text-indent: -9999px
+    width: 16px
+
+  .delete:hover
+    background-image: url('/assets/delete_hover.png')
 
   a
     color: #2E2E2E
