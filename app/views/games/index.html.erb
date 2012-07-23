@@ -8,6 +8,7 @@
         <td>Created at</td>
         <td>Total Score</td>
         <td>State</td>
+        <td>Delete?</td>
       </tr>
     </thead>
     <tbody>
@@ -16,7 +17,8 @@
           <td><%= link_to "Game #{game.id}", game %></td>
           <td><%= time_ago_in_words(game.created_at) %></td>
           <td><%= game.total_score %></td>
-          <td class="<%= game.finished ? 'finished' : 'ongoing' %>-state"><%= game.finished ? 'Finished' : 'Ongoing' %></td>
+          <td class="<%= game.finished ? 'finished' : 'ongoing' %>"><%= game.finished ? 'Finished' : 'Ongoing' %></td>
+          <td><%= link_to 'Delete?', game, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %></td>
         </tr>
       <% end %>
     </tbody>
