@@ -58,7 +58,7 @@
 
 <%= form_tag game_path(@game), :method => "put" do %>
   <%= label_tag(:number_of_pins, "Number of pins:") %>
-  <%= number_field_tag(:number_of_pins, nil, :in => 0...11) %>
+  <%= number_field_tag(:number_of_pins, nil, :autofocus => true, :in => 0...11) %>
   <%= submit_tag "Roll!" %>
 <% end %>
 
