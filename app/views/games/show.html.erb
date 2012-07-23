@@ -1,65 +1,69 @@
-<h1><%= "Game #{@game.id}" %></h1>
+<div class="wrapper">
+  <h1><%= "Game #{@game.id}" %></h1>
 
-<table class="score-sheet">
-  <thead>
-    <tr>
-      <th colspan="2">1</th>
-      <th colspan="2">2</th>
-      <th colspan="2">3</th>
-      <th colspan="2">4</th>
-      <th colspan="2">5</th>
-      <th colspan="2">6</th>
-      <th colspan="2">7</th>
-      <th colspan="2">8</th>
-      <th colspan="2">9</th>
-      <th colspan="3">10</th>
-      <th>Total score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="first-roll"><%= @game.frames[0].first_roll %></td>
-      <td class="second-roll"><%= @game.frames[0].second_roll %></td>
-      <td class="first-roll"><%= @game.frames[1].first_roll %></td>
-      <td class="second-roll"><%= @game.frames[1].second_roll %></td>
-      <td class="first-roll"><%= @game.frames[2].first_roll %></td>
-      <td class="second-roll"><%= @game.frames[2].second_roll %></td>
-      <td class="first-roll"><%= @game.frames[3].first_roll %></td>
-      <td class="second-roll"><%= @game.frames[3].second_roll %></td>
-      <td class="first-roll"><%= @game.frames[4].first_roll %></td>
-      <td class="second-roll"><%= @game.frames[4].second_roll %></td>
-      <td class="first-roll"><%= @game.frames[5].first_roll %></td>
-      <td class="second-roll"><%= @game.frames[5].second_roll %></td>
-      <td class="first-roll"><%= @game.frames[6].first_roll %></td>
-      <td class="second-roll"><%= @game.frames[6].second_roll %></td>
-      <td class="first-roll"><%= @game.frames[7].first_roll %></td>
-      <td class="second-roll"><%= @game.frames[7].second_roll %></td>
-      <td class="first-roll"><%= @game.frames[8].first_roll %></td>
-      <td class="second-roll"><%= @game.frames[8].second_roll %></td>
-      <td class="first-roll"><%= @game.frames[9].first_roll %></td>
-      <td class="second-roll"><%= @game.frames[9].second_roll %></td>
-      <td class="third-roll"><%= @game.frames[9].third_roll %></td>
-      <td class="total-score" rowspan="2"><%= @game.total_score %></td>
-    </tr>
-    <tr>
-      <td class="frame-score" colspan="2"><%= @game.frames[0].score unless @game.frames[0].score == 0 %></td>
-      <td class="frame-score" colspan="2"><%= @game.frames[1].score unless @game.frames[1].score == 0 %></td>
-      <td class="frame-score" colspan="2"><%= @game.frames[2].score unless @game.frames[2].score == 0 %></td>
-      <td class="frame-score" colspan="2"><%= @game.frames[3].score unless @game.frames[3].score == 0 %></td>
-      <td class="frame-score" colspan="2"><%= @game.frames[4].score unless @game.frames[4].score == 0 %></td>
-      <td class="frame-score" colspan="2"><%= @game.frames[5].score unless @game.frames[5].score == 0 %></td>
-      <td class="frame-score" colspan="2"><%= @game.frames[6].score unless @game.frames[6].score == 0 %></td>
-      <td class="frame-score" colspan="2"><%= @game.frames[7].score unless @game.frames[7].score == 0 %></td>
-      <td class="frame-score" colspan="2"><%= @game.frames[8].score unless @game.frames[8].score == 0 %></td>
-      <td class="frame-score" colspan="3"><%= @game.frames[9].score unless @game.frames[9].score == 0 %></td>
-    </tr>
-  </tbody>
-</table>
+  <div class="score-sheet">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">1</th>
+          <th colspan="2">2</th>
+          <th colspan="2">3</th>
+          <th colspan="2">4</th>
+          <th colspan="2">5</th>
+          <th colspan="2">6</th>
+          <th colspan="2">7</th>
+          <th colspan="2">8</th>
+          <th colspan="2">9</th>
+          <th colspan="3">10</th>
+          <th>Total score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="first-roll"><%= @game.frames[0].first_roll %></td>
+          <td class="second-roll"><%= @game.frames[0].second_roll %></td>
+          <td class="first-roll"><%= @game.frames[1].first_roll %></td>
+          <td class="second-roll"><%= @game.frames[1].second_roll %></td>
+          <td class="first-roll"><%= @game.frames[2].first_roll %></td>
+          <td class="second-roll"><%= @game.frames[2].second_roll %></td>
+          <td class="first-roll"><%= @game.frames[3].first_roll %></td>
+          <td class="second-roll"><%= @game.frames[3].second_roll %></td>
+          <td class="first-roll"><%= @game.frames[4].first_roll %></td>
+          <td class="second-roll"><%= @game.frames[4].second_roll %></td>
+          <td class="first-roll"><%= @game.frames[5].first_roll %></td>
+          <td class="second-roll"><%= @game.frames[5].second_roll %></td>
+          <td class="first-roll"><%= @game.frames[6].first_roll %></td>
+          <td class="second-roll"><%= @game.frames[6].second_roll %></td>
+          <td class="first-roll"><%= @game.frames[7].first_roll %></td>
+          <td class="second-roll"><%= @game.frames[7].second_roll %></td>
+          <td class="first-roll"><%= @game.frames[8].first_roll %></td>
+          <td class="second-roll"><%= @game.frames[8].second_roll %></td>
+          <td class="first-roll"><%= @game.frames[9].first_roll %></td>
+          <td class="second-roll"><%= @game.frames[9].second_roll %></td>
+          <td class="third-roll"><%= @game.frames[9].third_roll %></td>
+          <td class="total-score" rowspan="2"><%= @game.total_score %></td>
+        </tr>
+        <tr>
+          <td class="frame-score" colspan="2"><%= @game.frames[0].score unless @game.frames[0].score == 0 %></td>
+          <td class="frame-score" colspan="2"><%= @game.frames[1].score unless @game.frames[1].score == 0 %></td>
+          <td class="frame-score" colspan="2"><%= @game.frames[2].score unless @game.frames[2].score == 0 %></td>
+          <td class="frame-score" colspan="2"><%= @game.frames[3].score unless @game.frames[3].score == 0 %></td>
+          <td class="frame-score" colspan="2"><%= @game.frames[4].score unless @game.frames[4].score == 0 %></td>
+          <td class="frame-score" colspan="2"><%= @game.frames[5].score unless @game.frames[5].score == 0 %></td>
+          <td class="frame-score" colspan="2"><%= @game.frames[6].score unless @game.frames[6].score == 0 %></td>
+          <td class="frame-score" colspan="2"><%= @game.frames[7].score unless @game.frames[7].score == 0 %></td>
+          <td class="frame-score" colspan="2"><%= @game.frames[8].score unless @game.frames[8].score == 0 %></td>
+          <td class="frame-score" colspan="3"><%= @game.frames[9].score unless @game.frames[9].score == 0 %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<%= form_tag game_path(@game), :method => "put" do %>
-  <%= label_tag(:number_of_pins, "Number of pins:") %>
-  <%= number_field_tag(:number_of_pins, nil, :autofocus => true, :in => 0...11) %>
-  <%= submit_tag "Roll!" %>
-<% end %>
+  <%= form_tag game_path(@game), :method => "put" do %>
+    <%= label_tag(:number_of_pins, "Number of pins:") %>
+    <%= number_field_tag(:number_of_pins, nil, :autofocus => true, :in => 0...11) %>
+    <%= submit_tag "Roll!" %>
+  <% end %>
 
-<%= link_to 'Leave', games_path %>
+  <%= link_to 'Back to Title', root_url, :class => 'button back' %>
+</div>
