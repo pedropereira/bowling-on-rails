@@ -20,14 +20,11 @@ class Game < ActiveRecord::Base
 
     current_frame.roll!(number_of_pins)
 
-    if !current_frame.second_roll.nil? and current_frame_number < 10
-      self.current_frame_number += 1
-    elsif !current_frame.second_roll.nil? and current_frame_number == 10 and current_frame.mark != 'strike'
-      self.finished = true
-    elsif current_frame.mark == 'strike' and current_frame_number < 10
-      self.current_frame_number += 1
-    elsif current_frame.mark == 'strike' and current_frame_number == 10 and !current_frame.third_roll.nil?
-      self.finished = true
+    if current_frame_number < 10
+      self.current_frame_number += 1 if current_frame.is_strike? or !current_frame.second_roll.nil?
+    else
+      self.finished = true if (current_frame.is_strike? and !current_frame.third_roll.nil?) or
+                              (!current_frame.is_strike? and !current_frame.second_roll.nil?)
     end
 
     self.save
