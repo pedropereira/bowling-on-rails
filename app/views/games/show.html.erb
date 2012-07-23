@@ -24,9 +24,11 @@
             <td class="first-roll"><%= frame.first_roll %></td>
             <td class="second-roll"><%= frame.second_roll %></td>
           <% end %>
-          <td class="first-roll"><%= @game.frames.last.first_roll %></td>
-          <td class="second-roll"><%= @game.frames.last.second_roll %></td>
-          <td class="third-roll"><%= @game.frames.last.third_roll %></td>
+
+          <% frame = @game.frames.last %>
+            <td class="first-roll"><%= frame.first_roll %></td>
+            <td class="second-roll"><%= frame.second_roll %></td>
+            <td class="third-roll"><%= frame.third_roll %></td>
           <td class="total-score" rowspan="2"><%= @game.total_score %></td>
         </tr>
         <tr>
