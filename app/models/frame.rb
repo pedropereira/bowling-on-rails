@@ -43,10 +43,10 @@ class Frame < ActiveRecord::Base
         get_frame(-1).add_to_score(number_of_pins)
       end
     elsif
-      if get_frame(-1).is_strike? and get_frame(-2).is_strike? and second_roll.nil?
-        get_frame(-2).add_to_score(number_of_pins)
-        get_frame(-1).add_to_score(number_of_pins)
-      elsif get_frame(-1).is_strike? and get_frame(-2).is_strike? and third_roll.nil?
+      if get_frame(-1).is_strike? and get_frame(-2).is_strike?
+        get_frame(-2).add_to_score(number_of_pins) if second_roll.nil?
+        get_frame(-1).add_to_score(number_of_pins) if third_roll.nil?
+      elsif get_frame(-1).is_strike? and (second_roll.nil? or third_roll.nil?)
         get_frame(-1).add_to_score(number_of_pins)
       elsif get_frame(-1).is_spare? and second_roll.nil?
         get_frame(-1).add_to_score(number_of_pins)
