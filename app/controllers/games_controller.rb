@@ -23,10 +23,10 @@ class GamesController < ApplicationController
     redirect_to game_path(@game)
   end
 
-  def delete
+  def destroy
     @game = Game.find(params[:id])
     @game.destroy
 
-    redirect_to root_url
+    redirect_to games_path
   end
 end
