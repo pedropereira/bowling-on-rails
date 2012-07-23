@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>BowlingOnRails</title>
-  <%= stylesheet_link_tag    "reset", "application", :media => "all" %>
+  <%= stylesheet_link_tag    "application",
+                             "http://fonts.googleapis.com/css?family=Sigmar+One", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="wrapper">
+  <%= yield %>
+</div>
 
 </body>
 </html>
