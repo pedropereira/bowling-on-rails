@@ -1,24 +1,26 @@
-<h1>Available games</h1>
+<div class="wrapper">
+  <h1>Available games</h1>
 
-<table class="games-list">
-  <thead>
-    <tr>
-      <td>ID</td>
-      <td>Created at</td>
-      <td>Total Score</td>
-      <td>State</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @games.each do |game| %>
+  <table class="games-list">
+    <thead>
       <tr>
-        <td><%= link_to "Game #{game.id}", game %></td>
-        <td><%= time_ago_in_words(game.created_at) %></td>
-        <td><%= game.total_score %></td>
-        <td class="<%= game.finished ? 'finished' : 'ongoing' %>-state"><%= game.finished ? 'Finished' : 'Ongoing' %></td>
+        <td>Id</td>
+        <td>Created at</td>
+        <td>Total Score</td>
+        <td>State</td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @games.each do |game| %>
+        <tr>
+          <td><%= link_to "Game #{game.id}", game %></td>
+          <td><%= time_ago_in_words(game.created_at) %></td>
+          <td><%= game.total_score %></td>
+          <td class="<%= game.finished ? 'finished' : 'ongoing' %>-state"><%= game.finished ? 'Finished' : 'Ongoing' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'Back', root_url %>
+  <%= link_to 'Back to Title', root_url, :class => 'button back' %>
+</div>
