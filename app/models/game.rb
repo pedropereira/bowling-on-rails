@@ -24,7 +24,8 @@ class Game < ActiveRecord::Base
       self.current_frame_number += 1 if current_frame.is_strike? or !current_frame.second_roll.nil?
     else
       self.finished = true if (current_frame.is_strike? and !current_frame.third_roll.nil?) or
-                              (!current_frame.is_strike? and !current_frame.second_roll.nil?)
+                              (current_frame.is_spare? and !current_frame.third_roll.nil?) or
+                              (!current_frame.is_strike? and !current_frame.is_spare? and !current_frame.second_roll.nil?)
     end
 
     self.save
