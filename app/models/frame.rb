@@ -10,12 +10,17 @@ class Frame < ActiveRecord::Base
       self.first_roll = number_of_pins
     elsif second_roll.nil?
       self.second_roll = number_of_pins
-    elsif game.current_frame_number == 10 and is_strike?
-      second_roll.nil? ? self.second_roll = number_of_pins : self.third_roll = number_of_pins
+    elsif game.current_frame_number == 10 and (is_strike? or is_spare?)
+      self.third_roll = number_of_pins
     end
 
-    self.pins_left -= number_of_pins if first_roll != 10
-    set_mark
+    if first_roll == 10
+      self.mark = 'strike'
+    elsif !second_roll.nil? and first_roll + second_roll == 10
+      self.mark = 'spare'
+    end
+
+    set_pins_left(number_of_pins)
     set_score!(number_of_pins)
 
     self.save
@@ -53,8 +58,9 @@ class Frame < ActiveRecord::Base
     self.mark == 'spare'
   end
 
-  def set_mark
-    self.mark = 'strike' if first_roll == 10
-    self.mark = 'spare'  if first_roll != 10 and pins_left == 0
+  def set_pins_left(number_of_pins)
+    self.pins_left -= number_of_pins
+
+    self.pins_left = 10 if game.current_frame_number == 10 and (is_strike? or is_spare?)
   end
 end
