@@ -1,0 +1,9 @@
+<% frames.each do |frame| %>
+  <% if frame.is_strike? %>
+    <td class='first-roll'></td><td class='second-roll'>x</td>
+  <% elsif frame.is_spare? %>
+    <td class='first-roll'><%= frame.first_roll %></td><td class='second-roll'>/</td>
+  <% else %>
+    <td class='first-roll'><%= frame.first_roll %></td><td class='second-roll'><%= frame.second_roll %></td>
+  <% end %>
+<% end %>

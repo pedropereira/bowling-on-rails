@@ -20,22 +20,18 @@
       </thead>
       <tbody>
         <tr>
-          <% @game.frames.take(9).each do |frame| %>
-            <td class="first-roll"><%= frame.first_roll %></td>
-            <td class="second-roll"><%= frame.second_roll %></td>
-          <% end %>
+          <%= render :partial => 'shared/frames',     :locals => { :frames => @game.frames.take(9) } %>
+          <%= render :partial => 'shared/last_frame', :locals => { :frame  => @game.frames.last } %>
 
-          <% frame = @game.frames.last %>
-            <td class="first-roll"><%= frame.first_roll %></td>
-            <td class="second-roll"><%= frame.second_roll %></td>
-            <td class="third-roll"><%= frame.third_roll %></td>
           <td class="total-score" rowspan="2"><%= @game.total_score %></td>
         </tr>
         <tr>
           <% @game.frames.take(9).each do |frame| %>
             <td class="frame-score" colspan="2"><%= frame.score unless frame.score == 0 %></td>
           <% end %>
-          <td class="frame-score" colspan="3"><%= @game.frames.last.score unless @game.frames.last.score == 0 %></td>
+
+          <% last_frame = @game.frames.last %>
+          <td class="frame-score" colspan="3"><%= last_frame.score unless last_frame.score == 0 %></td>
         </tr>
       </tbody>
     </table>

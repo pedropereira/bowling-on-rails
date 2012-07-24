@@ -1,0 +1,19 @@
+<% if frame.first_roll == 10 %>
+  <td class="first-roll">x</td>
+<% else %>
+  <td class="first-roll"><%= frame.first_roll %></td>
+<% end %>
+
+<% if frame.is_spare? %>
+  <td class="second-roll">/</td>
+<% elsif frame.second_roll == 10 %>
+  <td class="second-roll">x</td>
+<% else %>
+  <td class="second-roll"><%= frame.second_roll %></td>
+<% end %>
+
+<% if frame.third_roll == 10 %>
+  <td class="third-roll">x</td>
+<% else %>
+  <td class="third-roll"><%= frame.third_roll %></td>
+<% end %>
