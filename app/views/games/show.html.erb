@@ -43,5 +43,9 @@
     <%= submit_tag "Roll!" %>
   <% end %>
 
+  <% if !flash.empty? %>
+    <span class="flash-message"><%= flash[:notice] %></span>
+  <% end %>
+
   <%= link_to 'Back to Title', root_url, :class => 'action back' %>
 </div>
