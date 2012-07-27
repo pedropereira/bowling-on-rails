@@ -18,7 +18,12 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    @game.roll!(params[:number_of_pins].to_i)
+
+    begin
+      @game.roll!(params[:number_of_pins].to_i)
+    rescue Exception => exception
+      flash[:notice] = exception.message
+    end
 
     redirect_to game_path(@game)
   end
